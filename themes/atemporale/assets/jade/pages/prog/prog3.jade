@@ -1,0 +1,342 @@
+include ./../../layouts/mixin.jade
++infopage('Prog3','/prog3','default','Progetto 3')
++endinfofile()
+
++section('styles')
+link(href="/themes/atemporale/assets/css/prog.min.css", rel="stylesheet")/
+link(href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")/
++endsection()
+
++section('scripts')
+script(src="/themes/atemporale/assets/vendor/jquery/dist/jquery.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/js/prod/components/layout.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/js/prod/components/hydrogen.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/js/prod/pages/home.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/html5shiv/dist/html5shiv.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/royalslider/jquery.royalslider.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/mfp/jquery.mfp-0.9.9.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/mediaelement/build/mediaelement-and-player.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/gmap3/dist/gmap3.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/owlcarousel/owl-carousel/owl.carousel.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/isotope/dist/isotope.pkgd.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/jquery-form/jquery.form.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/jquery-validation/dist/jquery.validate.min.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/highcharts/themes/dark-green.js", type="text/javascript")
+script(src="/themes/atemporale/assets/vendor/highcharts/highcharts.js", type="text/javascript")
+//script(src="/themes/atemporale/assets/vendor/chartist/dist/chartist.min.js", type="text/javascript")
+script.
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Restulados'
+            },
+            subtitle: {
+                text: 'Andamento da campanha de Dezembro 2014 a Junho 2015'
+            },
+            xAxis: [{
+                categories: ['01 Dic', '01 Gen', '01 Feb', '01 Mar', '01 Apr', '01 Mag', '01 Giu'],
+                crosshair: true
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[2]
+                    }
+                },
+                title: {
+                    text: 'Novos contratos',
+                    style: {
+                        color: Highcharts.getOptions().colors[2]
+                    }
+                },
+                opposite: false
+
+            }, { // Secondary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Novos usuários no site',
+                    style: {
+                        color: Highcharts.getOptions().colors[7]
+                    }
+                },
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[7]
+                    }
+                }
+
+            }, { // Tertiary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Investimento',
+                    style: {
+                        color: Highcharts.getOptions().colors[8]
+                    }
+                },
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[8]
+                    }
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 110,
+                verticalAlign: 'bottom',
+                y: -95,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [ {
+                name: 'Investimento (os valores são ficticios por questão de privacidade mas proporcionais aos resultados.)',
+                type: 'column',
+                yAxis: 2,
+                data: [0, 0, 20, 40, 215, 12, 102],
+                dashStyle: 'shortdot',
+                color: Highcharts.getOptions().colors[8]
+            }, {
+                name: 'Novos usuários no site',
+                type: 'area',
+                data: [0, 0, 2, 3, 15, 0, 4],
+                color: Highcharts.getOptions().colors[7]
+            },{
+                name: 'Novos contratos',
+                type: 'spline',
+                yAxis: 1,
+                data: [0, 142, 536, 822, 2933, 645, 3281],
+                color: Highcharts.getOptions().colors[2]
+            }]
+        });
+    });
++endsection()
+
++section('eventuals')
+//none
++endsection()
+
++section('pages')
+section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg", data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg", data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg", data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg")
+    .section-row-container
+        .section-row.three-quarters-padding-bottom
+            .container
+                .row
+                    .col-md-12
+                        h1.page-title.text-center
+                            | Clinica Dentale Bavaria
+                            small Projeto de Presença Virtual Insuperável e de Promoção Vencedora
+
+        .section-row.three-quarters-padding-bottom.three-quarters-padding-top
+            .container
+                .row
+                    img#logo_cliente_inovar.col-md-offset-3.col-md-6(src!="{{'assets/images/portfolio/bavaria/logo_bavaria.png'|theme }}", alt="")/
+
+        .section-row.three-quarters-padding-bottom.three-quarters-padding-top
+            .container
+                .row
+                    .col-md-12
+                        p.col-md-offset-2.col-md-8.text-justify
+                            +content('bavaria/primotesto.htm')
+
+        .section-row.no-padding-top.no-padding-bottom
+            .container
+                .row
+                    .col-md-12(style="border-top:1px #ddd solid;")
+
+        .section-row
+            .container
+                .row
+                    .col-md-12
+                        h3.text-center
+                            small
+                                | com a colaboração de:
+                        a(href="http://diecicento.it/", title="Logo Diecicento Comunicazione", target="_blank")
+                            img.col-md-offset-5.col-md-2(src!="{{'assets/images/portfolio/bavaria/logo_diecicento.jpg'|theme }}", alt="Logo Diecicento Comunicazione")/
+
+
+        .section-row.no-padding-top
+            .container
+                .row
+                    .col-md-12(style="border-top:1px #ddd solid;")
+
+        .section-row.no-padding-top.three-quarters-padding-bottom
+            .container
+                .row
+                    .col-md-12
+                        h2.page-title.text-center
+                            | Presença Virtual Insuperável
+                            small Construção do site corporativo e criação de perfis sociais oficial
+
+                .row
+                    .col-md-12
+                        img.text-center(src!="{{'assets/images/portfolio/bavaria/presentazione_pagine_sito.jpg'|theme }}", alt="")/
+                .row.padding-bottom-100
+                    .col-md-12.text-center
+                        a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/HTML5", rel="tooltip", title="HTML5", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
+                            img(src="{{'assets/images/portfolio/bavaria/logo_html5.png'|theme }}", alt="logo html5")/
+                        a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/CSS3", rel="tooltip", title="CSS3", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
+                            img(src="{{'assets/images/portfolio/bavaria/logo_css3.png'|theme }}", alt="")/
+                        a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/JQuery", rel="tooltip", title="JQuery", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
+                            img(src="{{'assets/images/portfolio/bavaria/logo_jquery.png'|theme }}", alt="")/
+                        a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/PHP", rel="tooltip", title="PHP", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
+                            img(src="{{'assets/images/portfolio/bavaria/logo_php.png'|theme }}", alt="")/
+
+                .row
+                    .col-md-offset-2.col-md-5
+                        p.text-justify
+                            | ljllklkl
+
+                    aside.col-md-offset-1.col-md-3
+                        .sidebar-block
+                            h4.sidebar-title Social Network
+                            ul
+                                li.arrow voce1
+                                li.arrow voce2
+                                li.arrow voce3
+                                li.arrow voce4
+
+        .section-row.no-padding-top.no-padding-bottom
+            .container
+                .row
+                    .col-md-12(style="border-top:1px #ddd solid;")
+
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom
+            .container
+                .row
+                    .col-md-12.padding-bottom-100
+                        h2.page-title.text-center
+                            | Promoções vencedoras
+                            small Estratégia básica de propaganda on-line
+
+                    .col-md-12.padding-top-100.padding-bottom-50
+                        h4.section-subtitle.text-center
+                            | Otimização para motores de pesquisa
+
+                    .col-md-12
+                        .row
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-console
+                                    .info
+                                        h4 Semantica
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-random
+                                    .info
+                                        h4 Sitemap
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-font
+                                    .info
+                                        h4 Redazione
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                        .row
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-dashboard
+                                    .info
+                                        h4 Performance
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-globe
+                                    .info
+                                        h4 Motori di ricerca
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-bookmark
+                                    .info
+                                        h4 Certificazioni
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+
+                    .col-md-12.padding-top-100.padding-bottom-50
+                        h4.section-subtitle.text-center
+                            | Realização de campanhas publicitárias
+
+                    .col-md-12
+                        .row
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-eye-open
+                                    .info
+                                        h4 Monitoraggio
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-flag
+                                    .info
+                                        h4 Obiettivi
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-usd
+                                    .info
+                                        h4 Budget
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                        .row
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-knight
+                                    .info
+                                        h4 Strategia
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-bullhorn
+                                    .info
+                                        h4 Campagne
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                            .col-md-4
+                                .icon-box.vertical
+                                    .icon
+                                        span.glyphicon.glyphicon-stats
+                                    .info
+                                        h4 Risultati
+                                        p
+                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                        .row
+                            .col-md-12
+                                #container.padding-top-100(style="width:100%; height:40em;")
+
+                        .row
+                            .col-md-offset-2.col-md-8
+                                p.text-justify.padding-top-100.padding-bottom-100
+                                    | "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!" "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!"
+
+
+
+
+
++endsection()

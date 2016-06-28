@@ -1,0 +1,23 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    created_at:
+        label: Aggiunta
+        type: date
+        width: 150px
+
+    subject:
+        label: Oggetto
+        searchable: true
+
+    content:
+        label: Messaggio
+        searchable: true
+
+    owner:
+        width: 20%
+        label: Referente
+        relation: owner
+        select: concat(first_name, ' ', last_name)

@@ -1,0 +1,21 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: rainlab.blog::lang.category.name
+        placeholder: rainlab.blog::lang.category.name_placeholder
+        span: left
+
+    slug:
+        label: rainlab.blog::lang.category.slug
+        span: right
+        placeholder: rainlab.blog::lang.category.slug_placeholder
+        preset: name
+
+    description:
+        label: Descrizione
+        placeholder: Apparirà sotto il titolo della categoria nella pagina dedicata
+        size: huge

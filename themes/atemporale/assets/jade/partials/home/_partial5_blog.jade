@@ -1,0 +1,40 @@
+include ./../../layouts/mixin.jade
+section.section(data-background="{{ '/themes/atemporale/assets/images/home/2-a.jpg'|app}}", data-background-xs="{{ '/themes/atemporale/assets/images/home/2-xs.jpg'|app}}", data-background-md="{{ '/themes/atemporale/assets/images/home/2-md.jpg'|app}}", data-background-lg="{{ '/themes/atemporale/assets/images/home/2-lg.jpg'|app}}")
+    .section-row-container
+        .section-row.th-dark.no-padding-bottom.bg-transparent
+            .container
+                .row
+                    .col-md-12
+                        h3.section-subtitle.text-center
+                            +content('home_blog/blogtitle.htm')
+
+        .section-row.no-padding-top.half-padding-bottom
+            .container
+                .row
+                    .col-md-12(data-animation-name="fadeInRightBig")
+                        .owl-carousel.items-carousel(data-auto-height="true")
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post1.htm')
+
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post2.htm')
+
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post3.htm')
+
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post4.htm')
+
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post5.htm')
+
+                            .carousel-item
+                                .recent-post.post-standard
+                                    +content('home_blog/post6.htm')
+
+    .section-overlay

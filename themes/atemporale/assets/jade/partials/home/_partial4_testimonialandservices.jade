@@ -1,0 +1,77 @@
+include ./../../layouts/mixin.jade
+section#testimonials.section.th-dark(data-background="{{ '/themes/atemporale/assets/images/home/1-a.jpg'|app}}", data-background-xs="{{ '/themes/atemporale/assets/images/home/1-xs.jpg'|app}}", data-background-md="{{ '/themes/atemporale/assets/images/home/1-md.jpg'|app}}", data-background-lg="{{ '/themes/atemporale/assets/images/home/1-lg.jpg'|app}}")
+    .section-row-container
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom
+            .container
+                .row
+                    .col-md-10.col-md-push-1
+                        .testimonial-slider.owl-carousel(data-auto-height="true", data-single-item="true",data-animation-name="rotateInUpLeft")
+                            .testimonial
+                                blockquote
+                                    +content('home_promo1/testimonial1.htm')
+
+                            .testimonial
+                                blockquote
+                                    +content('home_promo1/testimonial2.htm')
+
+                            
+
+    .section-overlay
+section#services.section
+    .section-row-container
+        .section-row
+            .container
+                .row
+                    .col-lg-12
+                        +content('home_servizi/serviceheader.htm')
+
+                .row
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-paper-plane-o(data-animation-name="bounceIn")
+                                i.fa.fa-paper-plane-o.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service1.htm')
+
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-desktop(data-animation-name="bounceIn")
+                                i.fa.fa-desktop.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service2.htm')
+
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-magic(data-animation-name="bounceIn")
+                                i.fa.fa-magic.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service3.htm')
+
+                .spacer-20.hidden-xs.hidden-sm
+                .row
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-globe(data-animation-name="bounceIn")
+                                i.fa.fa-globe.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service4.htm')
+
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-university(data-animation-name="bounceIn")
+                                i.fa.fa-university.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service5.htm')
+
+                    .col-md-4
+                        .service
+                            .service-icon
+                                i.fa.fa-users(data-animation-name="bounceIn")
+                                i.fa.fa-users.shadow-icon(data-animation-name="fadeInLeft", data-animation-delay="0")
+                            .service-info
+                                +content('home_servizi/service6.htm')

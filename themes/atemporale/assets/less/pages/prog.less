@@ -1,0 +1,81 @@
+//richiamo i file less per ereditare le funzioni, ma senza stamparli
+//
+// * * * * * *
+@import (reference) "../../vendor/atemporaleNEXTbower/less/grid_system12.less";
+@import (reference) "../../vendor/atemporaleNEXTbower/less/material_design_color_palette.less";
+@import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_css3.less";
+@import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_posizione.less";
+@import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_testo.less";
+
+//stampo le formattazioni generali di default
+//
+// * * * * * *
+@import (reference) "../../vendor/atemporaleNEXTbower/less/start.less";
+
+// stampo le formattazioni dei componenti
+//
+// * * * * * * font e icone
+@import "../../vendor/bootstrap/less/glyphicons.less";
+@import "../../vendor/font-awesome/less/font-awesome.less";
+
+// * * * * * * hydrogen plugin
+@import "../../vendor/royalslider/royalslider.less";
+@import "../../vendor/owlcarousel/owl-carousel/owl.carousel.less";
+@import "../../vendor/mfp/jquery.mfp.less";
+// * * * * * * hydrogen template
+@import "../components/theme_light.less";
+@import "../components/variables.less";
+@import "../components/mixins.less";
+@import "../components/typography.less";
+@import "../components/layout.less";
+@import "../components/section.less";
+@import "../components/modules.less";
+@import "../components/project.less";
+@import "../components/blog.less";
+@import "../components/mejs.less";
+@import "../components/media-queries.less";
+@import "../components/animations.less";
+
+// stampo le formattazioni dei nuovi elementi della pagina
+//
+// * * * * * * generale
+.padding-top-10{padding-top: 10px}
+.padding-top-20{padding-top: 20px}
+.padding-top-50{padding-top: 50px}
+.padding-top-100{padding-top: 100px}
+
+.padding-bottom-10{padding-bottom: 10px}
+.padding-bottom-20{padding-bottom: 20px}
+.padding-bottom-50{padding-bottom: 50px}
+.padding-bottom-100{padding-bottom: 100px}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+// * * * * * * introduzione progetti
+img#logo_cliente_inovar{
+  .testo_centro;
+}
+
+// * * * * * * immagine irresistibile
+img#costruzione_logo_cliente_inovar{
+  .size(100%;34%);
+}
+
+#dettagli_logo_inovar{
+  .vcenter {
+    height: 12em;
+    img{height: 12em;}
+    ul{height:6em; margin-top:3em; }
+  }
+}
+
+a.marchi_programmazione{
+  padding: 1.5em;
+  img{
+    .square(5em);
+  }
+}

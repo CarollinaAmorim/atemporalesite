@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        placeholder: Inserisci il nome/titolo dell'investimento
+
+    description:
+        label: Descrizione
+        type: richeditor
+
+    starting:
+        label: Data iniziale di riferimento
+        type: datepicker
+        mode: date
+
+    finishing:
+        label: Data finale di riferimento
+        type: datepicker
+        mode: date
+
+    investment:
+        label: Valore totale dell'investimento
+        type: number
+
+    profit:
+        label: Aumento del fatturato
+        type: number

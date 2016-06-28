@@ -1,0 +1,60 @@
+{{ __SELF__.settings.text_top_form|raw}}
+
+<form id="simpleContactForm" class="form-horizontal contact-form">
+
+    <div id="simple_contact_flash_message"></div>
+
+    <div class="form-group text-left">
+        <div class="{% if this.page.title == 'Homepage' %}col-md-6{% else %}col-md-12 padding-bottom-20{% endif %}">
+            <label for="name">{{__SELF__.properties.nameLabel}}</label>
+            <input type="text" id="name" name="name" class="form-control required" required placeholder="Qual o seu Nome?" />
+        </div>
+        <div class="{% if this.page.title == 'Homepage' %}col-md-6{% else %}col-md-12{% endif %}">
+            <label for="email">{{__SELF__.properties.emailLabel}}</label>
+            <input type="email" id="email" name="email" class="form-control required email" required placeholder="Qual o seu melhor Email?" />
+        </div>
+    </div>
+
+    <div class="form-group text-left">
+        <div class="{% if this.page.title == 'Homepage' %}col-md-6{% else %}col-md-12{% endif %}">
+            {% if(__SELF__.properties.phoneEnabled) %}
+            <label for="phone">{{__SELF__.properties.phoneLabel}}</label>
+            <input type="text" id="phone" name="phone" class="form-control required" placeholder="Qual o seu n° de Telefone?" />
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            {% if this.page.title == 'Homepage' %}
+                <label for="subject">{{__SELF__.properties.subjectLabel}}</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Indica o objeto para esta mensagem?"  />
+            {% else %}
+                <input type="text"  name="subject" class="form-control" value="{{ this.page.title }}" placeholder="Promo1" style="visibility: hidden" />
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="form-group text-left">
+        <div class="col-md-12">
+            <label for="message">{{__SELF__.properties.messageLabel}}</label>
+            <textarea id="message" name="message" class="form-control required" placeholder="Mensagem"></textarea>
+        </div>
+    </div>
+
+    <!-- Injecting reCaptcha if enabled -->
+    {% if(__SELF__.settings.recaptcha_enabled) %}
+        <div class="form-group">
+            <div class="col-md-12">
+                <label for="message"></label>
+                <div class="g-recaptcha" data-sitekey="{{__SELF__.settings.recaptcha_site_key}}"></div>
+            </div>
+        </div>
+    {% endif %}
+    <!-- End reCaptcha -->
+
+    <button id="simpleContactSubmitButton"
+            data-request="{{ __SELF__ }}::onFormSubmit"
+            type="submit" class="btn btn-sm btn-block btn-primary">
+        {{__SELF__.properties.buttonText}}
+    </button>
+
+</form>

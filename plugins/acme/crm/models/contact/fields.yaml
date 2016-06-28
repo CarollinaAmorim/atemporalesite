@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    user:
+        label: Cliente
+        type: relation
+        nameFrom: tag_name
+
+    note:
+        label: Annotazioni
+        type: richeditor

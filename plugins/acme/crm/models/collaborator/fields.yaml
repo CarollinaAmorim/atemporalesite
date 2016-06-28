@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    owner:
+        label: Collaboratore
+        type: relation
+        nameFrom: tag_name
+
+    incarico:
+        label: Incarico
+
+

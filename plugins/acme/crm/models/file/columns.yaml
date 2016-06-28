@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Nome del file
+        searchable: true
+
+    title:
+        label: Nome da mostrare nell'area clienti
+        searchable: true
+
+    path:
+        label: Percorso del file
+
+    extention:
+       label: Estenzione file

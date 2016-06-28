@@ -1,0 +1,35 @@
+include ./../../layouts/mixin.jade
+.site-loader
+
+section#home.site-splash.fullscreen
+    .splash-inner
+        .splash-slider
+            .splash-content
+                .container
+                    .row
+                        .col-md-12
+                            .splash-text
+                                +content('home_intro/introslide1.htm')
+            .splash-content
+                .container
+                    .row
+                        .col-md-12
+                            .splash-text
+                                +content('home_intro/introslide2.htm')
+            .splash-content
+                .container
+                    .row
+                        .col-md-12
+                            .splash-text
+                                +content('home_intro/introslide3.htm')
+
+            .cycle-next
+            .cycle-prev
+
+        +content('home_intro/introbackground.htm')
+            .overlay
+        .splash-feedback
+            span.mouse
+                span.fa.fa-angle-down
+            span.caption
+                ='Scroll'

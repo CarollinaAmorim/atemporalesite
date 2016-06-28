@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Nome del file
+
+    title:
+        label: Nome che appare al cliente
+
+    extention:
+        label: Scegli l'estenzione del file
+        type: dropdown
+
+    description:
+        label: Descrizione
+
+    path:
+        label: Persorso del file
+

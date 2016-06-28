@@ -1,0 +1,106 @@
+{% set posts = __SELF__.posts %}
+
+{% for post in posts %}
+    {% if this.page.title == 'Homepage' %}
+
+<div class="carousel-item">
+
+    <div class="recent-post post-standard">
+        <div class="recent-post-media recent-post-img">
+            <div class="media">
+                <figure>
+                    <img src="{{ '/blog'|media }}/{{ post.filename }}{{ post.ext }}" alt="Imagem inicial do post {{ post.title }}">
+                </figure>
+                <div class="overlay">
+                    <ul>
+                        <li class="mfp-zoom"><a href="{{ '/blog'|media }}/{{ post.filename }}{{ post.ext }}" title="Imagem inicial do post {{ post.title }}"><span class="fa fa-arrows-alt"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="recent-post-body">
+            <a href="{{ post.url }}" class="read-more-link"><span class="fa fa-link"></span></a>
+            <div class="content">
+                <h4 class="post-title">{{ post.title }}</h4>
+
+                <p>{{ post.excerpt }}</p>
+                <div class="meta">
+                    <ul>
+                        <li>De <a href="{{post.user.postlinkpersonal}}" title="Link externo - Perfil pessoal de {{ post.user.first_name }} {{ post.user.last_name }}" target="_blank">{{ post.user.first_name }} {{ post.user.last_name }}</a></li>
+                        <li>{{ post.published_at|date('M d, Y') }}</li>
+                    </ul>
+                    {% if post.categories.count %}
+                    {% for category in post.categories %}
+                    <a href="{{ category.url }}">
+                        <span class="label label-default">{{ category.name }}</span>
+                    </a>
+                    {% if not loop.last %},
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    {% else %}
+<article class="post">
+    <div class="post-inner row">
+        <div class="post-media col-md-12">
+            <div class="media">
+                <figure>
+                    <img src="{{ '/blog'|media }}/{{ post.filename }}{{ post.ext }}" alt="Imagem inicial do post {{ post.title }}" />
+                </figure>
+            </div>
+        </div>
+
+        <div class="post-content col-md-10 col-md-push-1">
+            <div class="post-header">
+                <div class="post-date info">
+                    {{ post.published_at|date('M d, Y') }}
+                </div>
+                <h3 class="post-title">
+                    <a href="{{ post.url }}" title="{{ post.title }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+                <ul class="meta info">
+                    <li>De <a href="{{post.user.postlinkpersonal}}" title="Link externo - Perfil pessoal de {{ post.user.first_name }} {{ post.user.last_name }}" target="_blank">{{ post.user.first_name }} {{ post.user.last_name }}</a></li>
+                    <li>({{ post.user.profession }} no <a href="{{post.user.companysite}}" title="Link exteroa - Site da empresa {{post.user.company}}" target="_blank">{{ post.user.company }})</a></li>
+                </ul>
+            </div>
+
+            <div class="post-body">
+                <p class="excerpt">{{ post.summary }}</p>
+                <a href="{{ post.url }}" class="btn btn-primary btn-sm">Continue lendo</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+    {%endif%}
+{% else %}
+<li class="no-data">{{ noPostsMessage }}</li>
+{% endfor %}
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

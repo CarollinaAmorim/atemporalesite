@@ -1,0 +1,193 @@
+<div class="row">
+    <aside class="sidebar col-md-2">
+        <div class="sidebar-block">
+            <h4 class="sidebar-title">Briefing</h4>
+            <p>{{ user.opportunity.opportunity.description|raw }}</p>
+        </div>
+        <div class="sidebar-block">
+            <h4 class="sidebar-title">Documenti</h4>
+            <ul>
+                {% for file in user.opportunity.opportunity.files %}
+                    <li>
+                        <a href="{{ file.path }}{{ file.name }}.{{ file.extention }}">
+                            {{ file.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="col-md-8 col-md-offset-1">
+        <div class="tab-widget">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">Messaggi importanti</a></li>
+                <li class=""><a href="#profile" data-toggle="tab">Servizi acquistati</a></li>
+                <li class=""><a href="#social" data-toggle="tab">Pagamenti</a></li>
+                <li class=""><a href="#contatti" data-toggle="tab">Report risultati</a></li>
+                <li class=""><a href="#settings" data-toggle="tab">Account personale</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="home">
+                    {% for invoice in user.opportunity.opportunity.notes %}
+                        <div class="lead">
+                            <blockquote>
+                                <p>{{ invoice.content }}</p>
+                                <small>{{ invoice.owner.first_name }} {{ invoice.owner.last_name }}</small>
+                            </blockquote>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="profile">
+                    {% for service in user.opportunity.opportunity.services %}
+                        <div class="call-to-action ">
+                            <div class="call-to-action-inner">
+                                <div class="col-text">
+                                    <h3 class="headline">{{ service.service.name }}</h3>
+                                    <p class="text-justify"><br />{{ service.annotations }}<br/></p>
+                                </div><br />
+                                <div class="progress-counter">
+                                    <span class="progress-label text-center">Status del progetto: {{ service.status }}</span>
+                                    <div class="progress progress-striped active" data-value="{{ service.completion }}">
+                                        <div class="progress-bar progress-bar-success"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="social">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>Nome</td>
+                                <td>Data invio fattura</td>
+                                <td>Data di scadenza</td>
+                                <td>Stato del pagamento</td>
+                                <td>Importo</td>
+                                <td>Azioni</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for invoice in user.opportunity.opportunity.invoices %}
+                            <tr>
+                                <td>{{ invoice.name }}</td>
+                                <td>{{ invoice.creation }}</td>
+                                <td>{{ invoice.duedate }}</td>
+                                <td>{{ invoice.payment }}</td>
+                                <td>{{ invoice.total }}</td>
+                                <td>
+                                    <a href="mailto:info@atemporale.it?subject=Comprovante de pagamento" class="btn btn-success btn-xs">Invia comprovante</a>
+                                    <a href="mailto:info@atemporale.it?subject=Pagamento efetuado" class="btn btn-info btn-xs">Segnala pagamento</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        {{ user.opportunity.opportunity.invoices.name }}
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="contatti">
+                    {% for report in user.opportunity.opportunity.reports %}
+                        <div class="post-content section-row no-padding-top col-md-12">
+                            <div class="post-header row">
+                                <div class="post-date info">
+                                    Start on {{ report.starting }} and finish on {{ report.finishing }}. Invetment: {{ report.investment }}R$ - Profit: {{ report.profit }}R$
+                                </div>
+                                <h3 class="post-title">
+                                    {{ report.name }}
+                                </h3>
+                            </div>
+                            <div class="row post-body">
+                                 {{ report.description|raw }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="settings">
+                    <br /><br /><br /><br />
+                    <p>Per favore <span class="label label-warning">verifica che i valori</span> inseriti negli appositi campi <span class="label label-warning">siano corretti e/o aggiornati</span>! Questo ci aiuterà a velocizzare il nostro flusso di lavoro.
+                    </p>
+                    <br /><br /><br /><br />
+                    {{ form_ajax('onUpdate', { model: user }) }}
+                    <fieldset class="row col-md-12">
+                        <legend>Account:</legend>
+                        <div class="form-group col-md-6">
+                            <label for="accountName">Name</label>
+                            <input name="name" type="text" class="form-control" id="accountName" value="{{ form_value('name') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountSurname">Surname</label>
+                            <input name="surname" type="text" class="form-control" id="accountSurname" value="{{ form_value('surname') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountEmail">Email</label>
+                            <input name="email" type="email" class="form-control" id="accountEmail" value="{{ form_value('email') }}">
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="row col-md-12">
+                        <legend>Personal:</legend>
+                        <div class="form-group col-md-6">
+                            <label for="accountJob">Job</label>
+                            <input name="job" type="text" class="form-control" id="accountJob" value="{{ form_value('job') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountPosition">Position</label>
+                            <input name="position" type="text" class="form-control" id="accountPosition" value="{{ form_value('position') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountCpf">CPF</label>
+                            <input name="cpf" type="text" class="form-control" id="accountCpf" value="{{ form_value('cpf') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountMobile">Mobile</label>
+                            <input name="mobile" type="text" class="form-control" id="accountMobile" value="{{ form_value('mobile') }}">
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="row col-md-12">
+                        <legend>Company:</legend>
+                        <div class="form-group col-md-6">
+                            <label for="accountCompany">Company</label>
+                            <input name="company" type="text" class="form-control" id="accountCompany" value="{{ form_value('company') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountTelephone">Telephone</label>
+                            <input name="telephone" type="text" class="form-control" id="accountTelephone" value="{{ form_value('telephone') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountFax">Fax</label>
+                            <input name="fax" type="text" class="form-control" id="accountFax" value="{{ form_value('fax') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountCity">City</label>
+                            <input name="city" type="text" class="form-control" id="accountCity" value="{{ form_value('city') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountAddress">Address</label>
+                            <input name="address" type="text" class="form-control" id="accountAddress" value="{{ form_value('address') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountZipcode">Zipcode</label>
+                            <input name="zipcode" type="text" class="form-control" id="accountZipcode" value="{{ form_value('zipcode') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountCnpj">CNPJ</label>
+                            <input name="cnpj" type="text" class="form-control" id="accountCnpj" value="{{ form_value('cnpj') }}">
+                        </div>
+                    </fieldset>
+
+
+
+                    <button type="submit" class="btn btn-default">Save</button>
+                    {{ form_close() }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

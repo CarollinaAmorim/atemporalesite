@@ -1,0 +1,183 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: rainlab.user::lang.user.name
+        span: auto
+
+    surname:
+        label: rainlab.user::lang.user.surname
+        span: auto
+
+tabs:
+    fields:
+
+        email:
+            label: rainlab.user::lang.user.email
+            tab: rainlab.user::lang.user.account
+            span: left
+
+        tag_name:
+            label: Nome per la ricerca (p.e.: Alessandro-Atemporale)
+            tab: rainlab.user::lang.user.account
+            span: right
+
+        password:
+            label: rainlab.user::lang.user.reset_password
+            comment: rainlab.user::lang.user.reset_password_comment
+            tab: rainlab.user::lang.user.account
+            type: password
+            span: left
+
+        password_confirmation:
+            label: rainlab.user::lang.user.confirm_password
+            comment: rainlab.user::lang.user.confirm_password_comment
+            tab: rainlab.user::lang.user.account
+            type: password
+            span: right
+
+        username:
+            label: rainlab.user::lang.user.username
+            tab: rainlab.user::lang.user.account
+            hidden: true
+            span: left
+
+        groups:
+            label: rainlab.user::lang.user.groups
+            tab: rainlab.user::lang.user.account
+            type: relation
+            emptyOption: rainlab.user::lang.user.empty_groups
+
+
+
+        gender:
+            label: Genere
+            tab: Personale
+            type: dropdown
+            options:
+                unknown: unknown
+                female: female
+                male: male
+            span: auto
+
+        telephone:
+            label: Telefono
+            tab: Azienda
+            span: auto
+
+        mobile:
+            label: Mobile
+            tab: Personale
+            span: auto
+
+        fax:
+            label: Fax
+            tab: Azienda
+            span: auto
+
+        cpf:
+            label: CPF
+            tab: Personale
+            span: auto
+
+        job:
+            label: Professione
+            tab: Personale
+            span: auto
+
+        company:
+            label: Azienda
+            tab: Azienda
+            span: auto
+
+        position:
+            label: Position
+            tab: Azienda
+            span: auto
+
+        country:
+            label: Country
+            tab: Address
+            span: auto
+
+        state:
+            label: State
+            tab: Address
+            span: auto
+
+        city:
+            label: City
+            tab: Address
+            span: auto
+
+        address:
+            label: Address
+            tab: Address
+            span: auto
+
+        zipcode:
+            label: Zipcode
+            tab: Address
+            span: auto
+
+        cnpj:
+            label: CNPJ
+            tab: Azienda
+            span: auto
+
+        about:
+            label: Small bio
+            tab: Personale
+            type: textarea
+            size: small
+            span: full
+
+        webpage:
+            label: Webpage
+            tab: Internet
+            span: auto
+
+        blog:
+            label: Blog
+            tab: Internet
+            span: auto
+
+        facebook:
+            label: Facebook
+            tab: Internet
+            span: auto
+
+        twitter:
+            label: Twitter
+            tab: Internet
+            span: auto
+
+        skype:
+            label: Skype
+            tab: Internet
+            span: auto
+
+        linkedin:
+            label: Linkedin
+            tab: Internet
+            span: auto
+
+
+secondaryTabs:
+    fields:
+
+        avatar:
+            label: rainlab.user::lang.user.avatar
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+
+        comment:
+            label: Comment
+            type: textarea
+            size: small
+

@@ -1,0 +1,142 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    is_superuser:
+        context: [create, update]
+        tab: backend::lang.user.permissions
+        label: backend::lang.user.superuser
+        type: switch
+        comment: backend::lang.user.superuser_comment
+
+tabs:
+    defaultTab: backend::lang.user.account
+    fields:
+        login:
+            span: left
+            label: backend::lang.user.login
+
+        email:
+            span: right
+            label: backend::lang.user.email
+
+        send_invite:
+            context: create
+            type: checkbox
+            label: backend::lang.user.send_invite
+            comment: backend::lang.user.send_invite_comment
+            default: true
+
+        first_name:
+            span: left
+            label: backend::lang.user.first_name
+            tab: Personal
+
+        last_name:
+            span: right
+            label: backend::lang.user.last_name
+            tab: Personal
+
+        password:
+            type: password
+            span: left
+            label: backend::lang.user.password
+
+        password_confirmation:
+            type: password
+            span: right
+            label: backend::lang.user.password_confirmation
+
+        tag_name:
+           label: Tag-name (p.e.: Alessandro-Atemporale)
+           span: auto
+
+        company:
+           label: Azienda
+           span: auto
+           tab: Company
+
+        cpf:
+           label: CPF
+           span: auto
+           tab: Personal
+
+        position:
+           label: Posizione/ruolo
+           span: auto
+           tab: Company
+
+        phone:
+           label: Telefono
+           span: auto
+           tab: Company
+
+        mobile:
+           label: Cellulare
+           span: auto
+           tab: Personal
+
+        fax:
+           label: Fax
+           span: auto
+           tab: Company
+
+        profession:
+           label: Professione
+           span: auto
+           tab: Personal
+
+        country:
+           label: Nazione
+           span: auto
+           tab: Company
+
+        state:
+           label: Stato
+           span: auto
+           tab: Company
+
+        city:
+           label: Città
+           span: auto
+           tab: Company
+
+        address:
+           label: Via
+           span: auto
+           tab: Company
+
+        zipcode:
+           label: Zipcode
+           span: auto
+           tab: Company
+
+        cnpj:
+           label: CNPJ
+           span: auto
+           tab: Company
+
+        bio:
+          label: Bio
+          type: richeditor
+          size: huge
+          tab: Biografy
+
+        groups:
+            context: [create, update]
+            label: backend::lang.user.groups
+            commentAbove: backend::lang.user.groups_comment
+            type: checkboxlist
+
+
+secondaryTabs:
+    fields:
+
+        avatar:
+            label: backend::lang.user.avatar
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+

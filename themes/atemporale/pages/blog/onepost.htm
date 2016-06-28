@@ -1,0 +1,73 @@
+title = "post"
+url = "/blog/post/:slug"
+layout = "default"
+description = "Lista dei posts"
+
+
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/index"
+
+
+
+[ssbuttonsssb]
+facebook = 1
+twitter = 1
+google+ = 1
+tumblr = 1
+pinterest = 1
+pocket = 1
+reddit = 1
+linkedin = 1
+wordpress = 1
+pinboard = 1
+email = 1
+theme = "flat_web_icon_set_color"
+
+
+==
+
+
+{% put styles %}
+
+<link href="/themes/atemporale/assets/css/home.min.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+{% endput %}
+
+
+
+{% put scripts %}
+
+<script src="/themes/atemporale/assets/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/components/layout.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/components/hydrogen.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/pages/home.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/html5shiv/dist/html5shiv.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/royalslider/jquery.royalslider.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/mfp/jquery.mfp-0.9.9.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/mediaelement/build/mediaelement-and-player.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/gmap3/dist/gmap3.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/owlcarousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/isotope/dist/isotope.pkgd.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/jquery-form/jquery.form.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+{% endput %}
+
+
+
+{% put eventuals %}
+
+<!--none-->
+{% endput %}
+
+
+
+{% put pages %}
+
+
+{% component "blogPost" %}
+
+
+{% endput %}
+

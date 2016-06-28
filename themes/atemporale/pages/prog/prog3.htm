@@ -1,0 +1,384 @@
+title = "Prog3"
+url = "/prog3"
+layout = "default"
+description = "Progetto 3"
+
+
+==
+
+
+{% put styles %}
+
+<link href="/themes/atemporale/assets/css/prog.min.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+{% endput %}
+
+
+
+{% put scripts %}
+
+<script src="/themes/atemporale/assets/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/components/layout.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/components/hydrogen.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/js/prod/pages/home.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/html5shiv/dist/html5shiv.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/royalslider/jquery.royalslider.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/mfp/jquery.mfp-0.9.9.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/mediaelement/build/mediaelement-and-player.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/gmap3/dist/gmap3.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/owlcarousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/isotope/dist/isotope.pkgd.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/jquery-form/jquery.form.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/highcharts/themes/dark-green.js" type="text/javascript"></script>
+<script src="/themes/atemporale/assets/vendor/highcharts/highcharts.js" type="text/javascript"></script>
+<!--script(src="/themes/atemporale/assets/vendor/chartist/dist/chartist.min.js", type="text/javascript")-->
+<script>
+  $(function () {
+      $('#container').highcharts({
+          chart: {
+              zoomType: 'xy'
+          },
+          title: {
+              text: 'Restulados'
+          },
+          subtitle: {
+              text: 'Andamento da campanha de Dezembro 2014 a Junho 2015'
+          },
+          xAxis: [{
+              categories: ['01 Dic', '01 Gen', '01 Feb', '01 Mar', '01 Apr', '01 Mag', '01 Giu'],
+              crosshair: true
+          }],
+          yAxis: [{ // Primary yAxis
+              labels: {
+                  style: {
+                      color: Highcharts.getOptions().colors[2]
+                  }
+              },
+              title: {
+                  text: 'Novos contratos',
+                  style: {
+                      color: Highcharts.getOptions().colors[2]
+                  }
+              },
+              opposite: false
+  
+          }, { // Secondary yAxis
+              gridLineWidth: 0,
+              title: {
+                  text: 'Novos usuários no site',
+                  style: {
+                      color: Highcharts.getOptions().colors[7]
+                  }
+              },
+              labels: {
+                  style: {
+                      color: Highcharts.getOptions().colors[7]
+                  }
+              }
+  
+          }, { // Tertiary yAxis
+              gridLineWidth: 0,
+              title: {
+                  text: 'Investimento',
+                  style: {
+                      color: Highcharts.getOptions().colors[8]
+                  }
+              },
+              labels: {
+                  style: {
+                      color: Highcharts.getOptions().colors[8]
+                  }
+              },
+              opposite: true
+          }],
+          tooltip: {
+              shared: true
+          },
+          legend: {
+              layout: 'vertical',
+              align: 'left',
+              x: 110,
+              verticalAlign: 'bottom',
+              y: -95,
+              floating: true,
+              backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+          },
+          series: [ {
+              name: 'Investimento (os valores são ficticios por questão de privacidade mas proporcionais aos resultados.)',
+              type: 'column',
+              yAxis: 2,
+              data: [0, 0, 20, 40, 215, 12, 102],
+              dashStyle: 'shortdot',
+              color: Highcharts.getOptions().colors[8]
+          }, {
+              name: 'Novos usuários no site',
+              type: 'area',
+              data: [0, 0, 2, 3, 15, 0, 4],
+              color: Highcharts.getOptions().colors[7]
+          },{
+              name: 'Novos contratos',
+              type: 'spline',
+              yAxis: 1,
+              data: [0, 142, 536, 822, 2933, 645, 3281],
+              color: Highcharts.getOptions().colors[2]
+          }]
+      });
+  });
+</script>
+{% endput %}
+
+
+
+{% put eventuals %}
+
+<!--none-->
+{% endput %}
+
+
+
+{% put pages %}
+
+<section data-background="/themes/atemporale/assets/images/parallax/1.jpg" data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg" data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg" data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg" class="section">
+  <div class="section-row-container">
+    <div class="section-row three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="page-title text-center">Clinica Dentale Bavaria<small>Projeto de Presença Virtual Insuperável e de Promoção Vencedora</small></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row three-quarters-padding-bottom three-quarters-padding-top">
+      <div class="container">
+        <div class="row"><img id="logo_cliente_inovar" src="{{'assets/images/portfolio/bavaria/logo_bavaria.png'|theme }}" alt="" class="col-md-offset-3 col-md-6"/></div>
+      </div>
+    </div>
+    <div class="section-row three-quarters-padding-bottom three-quarters-padding-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="col-md-offset-2 col-md-8 text-justify">
+
+{% content "bavaria/primotesto.htm" %}
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row no-padding-top no-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div style="border-top:1px #ddd solid;" class="col-md-12"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center"><small>com a colaboração de:</small></h3><a href="http://diecicento.it/" title="Logo Diecicento Comunicazione" target="_blank"><img src="{{'assets/images/portfolio/bavaria/logo_diecicento.jpg'|theme }}" alt="Logo Diecicento Comunicazione" class="col-md-offset-5 col-md-2"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row no-padding-top">
+      <div class="container">
+        <div class="row">
+          <div style="border-top:1px #ddd solid;" class="col-md-12"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row no-padding-top three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-title text-center">Presença Virtual Insuperável<small>Construção do site corporativo e criação de perfis sociais oficial</small></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><img src="{{'assets/images/portfolio/bavaria/presentazione_pagine_sito.jpg'|theme }}" alt="" class="text-center"/></div>
+        </div>
+        <div class="row padding-bottom-100">
+          <div class="col-md-12 text-center"><a href="https://pt.wikipedia.org/wiki/HTML5" rel="tooltip" title="HTML5" data-html="1" data-trigger="hover focus" data-placement="bottom" target="_blank" class="marchi_programmazione"><img src="{{'assets/images/portfolio/bavaria/logo_html5.png'|theme }}" alt="logo html5"/></a><a href="https://pt.wikipedia.org/wiki/CSS3" rel="tooltip" title="CSS3" data-html="1" data-trigger="hover focus" data-placement="bottom" target="_blank" class="marchi_programmazione"><img src="{{'assets/images/portfolio/bavaria/logo_css3.png'|theme }}" alt=""/></a><a href="https://pt.wikipedia.org/wiki/JQuery" rel="tooltip" title="JQuery" data-html="1" data-trigger="hover focus" data-placement="bottom" target="_blank" class="marchi_programmazione"><img src="{{'assets/images/portfolio/bavaria/logo_jquery.png'|theme }}" alt=""/></a><a href="https://pt.wikipedia.org/wiki/PHP" rel="tooltip" title="PHP" data-html="1" data-trigger="hover focus" data-placement="bottom" target="_blank" class="marchi_programmazione"><img src="{{'assets/images/portfolio/bavaria/logo_php.png'|theme }}" alt=""/></a></div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-5">
+            <p class="text-justify">
+              "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!"
+              "solo da iserire questi dati inerenti alle performance: Google PageSpeed Insights valuta il sito nella seguente forma. Esperienza utente:100/100. Performance su desktop:85/100. Performance su dispositivi mobile:71/100"
+            </p>
+          </div>
+          <aside class="col-md-offset-1 col-md-3">
+            <div class="sidebar-block">
+              <h4 class="sidebar-title">Social Network</h4>
+              <ul>
+                <li class="arrow">voce1</li>
+                <li class="arrow">voce2</li>
+                <li class="arrow">voce3</li>
+                <li class="arrow">voce4</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="section-row no-padding-top no-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div style="border-top:1px #ddd solid;" class="col-md-12"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row three-quarters-padding-top three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 padding-bottom-100">
+            <h2 class="page-title text-center">Promoções vencedoras<small>Estratégia básica de propaganda on-line</small></h2>
+          </div>
+          <div class="col-md-12 padding-top-100 padding-bottom-50">
+            <h4 class="section-subtitle text-center">Otimização para motores de pesquisa</h4>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-console"></span></div>
+                  <div class="info">
+                    <h4>Semantica</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-random"></span></div>
+                  <div class="info">
+                    <h4>Sitemap</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-font"></span></div>
+                  <div class="info">
+                    <h4>Redazione</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-dashboard"></span></div>
+                  <div class="info">
+                    <h4>Performance</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-globe"></span></div>
+                  <div class="info">
+                    <h4>Motori di ricerca</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-bookmark"></span></div>
+                  <div class="info">
+                    <h4>Certificazioni</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 padding-top-100 padding-bottom-50">
+            <h4 class="section-subtitle text-center">Realização de campanhas publicitárias</h4>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-eye-open"></span></div>
+                  <div class="info">
+                    <h4>Monitoraggio</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-flag"></span></div>
+                  <div class="info">
+                    <h4>Obiettivi</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-usd"></span></div>
+                  <div class="info">
+                    <h4>Budget</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-knight"></span></div>
+                  <div class="info">
+                    <h4>Strategia</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-bullhorn"></span></div>
+                  <div class="info">
+                    <h4>Campagne</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box vertical">
+                  <div class="icon"><span class="glyphicon glyphicon-stats"></span></div>
+                  <div class="info">
+                    <h4>Risultati</h4>
+                    <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="container" style="width:100%; height:40em;" class="padding-top-100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+                <p class="text-justify padding-top-100 padding-bottom-100">"Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!" "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endput %}
+
