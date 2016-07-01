@@ -1,5 +1,5 @@
 include ./../../layouts/mixin.jade
-+infopage('Vó Liga Bolos Caseiros','/prog2','default','Progetto 2')
++infopage('Prog2','/prog2','default','Progetto 2')
 +endinfofile()
 
 +section('styles')
@@ -31,7 +31,7 @@ script(src="/themes/atemporale/assets/vendor/jquery-validation/dist/jquery.valid
 +endsection()
 
 +section('pages')
-section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg", data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg", data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg", data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg")
+section.section
     .section-row-container
         .section-row.three-quarters-padding-bottom
             .container
@@ -39,158 +39,53 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                     .col-md-12
                         h1.page-title.text-center
                             | Vó Ligia Bolos Caseiros
-                            small O que apreciar de cada instante?
+                            small O que degustar de cada momento?
+
+        +partial('voligia/copertina.htm')
 
         .section-row.three-quarters-padding-bottom.three-quarters-padding-top
-            .container
-                .row
-                    img#logo_cliente_inovar.col-md-offset-3.col-md-6(src!="{{'assets/images/portfolio/voligia/logo_esecutivo_vo_ligia.svg'|theme }}", alt="")/
-
-        .section-row.three-quarters-padding-bottom.three-quarters-padding-top
-            .container
-                .row
-                    .col-md-12
-                        p.col-md-offset-2.col-md-8.text-justify
-                            +content('voligia/primotesto.htm')
-
-
-        .section-row.three-quarters-padding-top.three-quarters-padding-bottom(style="background-color:#bbb;")
-            .container
-                .row
-                    .col-md-10.col-md-push-1
-                        .testimonial-slider.owl-carousel(data-auto-height="true", data-single-item="true",data-animation-name="rotateInUpLeft")
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd</cite>'
-
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd.</cite>'
-
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd.</cite>'
-
-        .section-row.no-padding-top
             .container
                 .row
                     .col-md-12(style="border-top:1px #ddd solid;")
 
-        .section-row.no-padding-top.three-quarters-padding-bottom
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom
             .container
                 .row
                     .col-md-12
                         h2.page-title.text-center
                             | Marca Irresistível
-                            small Projeto de Marca Irresistível
-
-                .row.padding-top-100
-                    .col-md-6
-                        figure.col-md-12
-                            img#costruzione_logo_cliente_inovar(src!="{{'assets/images/portfolio/voligia/costruzione_logo.jpg'|theme }}", alt="")/
-                            figcaption.text-center
-                                small Construção da logo
-
-                        h3.page-title.text-center.col-md-12.padding-top-50
-                            | Coinceitos chave
-                            small Conceito - “Minha marca é o meu bolo” A chef Ligia Helena sempre dizia isso nos encontros. Percebemos que essa identidade tinha que vir à tona.
-                        p.text-center.col-md-12.padding-top-20
-                            span.label.label-default tradicional/caseiro
-                            !="&nbsp"
-                            span.label.label-default simplicidade
-                            !="&nbsp"
-                            span.label.label-default fluidez
-
-                        h3.page-title.text-center.col-md-12
-                            small A forma da logo foi inspirada em um bolo cortado ao meio. Demos a ele a fluidez, simplificando as formas do bolo para que assim comunicasse a beleza de algo que é feito com amor, pelas “próprias mãos”
-
-                        h3.text-center.col-md-12.padding-top-20
-                            .label.label-default O essencial é degustar a simplicidade!
+                            small Projeto Identidade Visual para Vó Ligia Bolos Caseiro<br />Team:Alessandro Traversi, Carollina Amorim e Francislene Silva.
 
 
-                    #dettagli_logo_inovar.col-md-6
-                        .row
-                            h3.page-title.text-center.col-md-12
-                                | Escolher cores
-                                small ...significa definir o caráter da empresa
-                        .row.clear.padding-top-20
-                            .col-md-6.vcenter
-                                img(src!="{{'assets/images/portfolio/inovar/colore1.png'|theme }}", alt="")/
 
-                            .col-md-6.vcenter
-                                ul.arrow-list
-                                    li HEX: #59392f
-                                    li RGBA: 89,57,47,1
-                                    li CMYK: 47,69,71,49
-                                    li Pantone: P-43-16 C Solid Coated
-
-                        .row.clear.padding-bottom-50
-                            .col-md-6.vcenter
-                                img(src!="{{'assets/images/portfolio/inovar/colore2.png'|theme }}", alt="")/
-
-                            .col-md-6.vcenter
-                                ul.arrow-list
-                                    li HEX: #d8c284
-                                    li RGBA: 216,194,132,1
-                                    li CMYK: 0,8,46,18
-                                    li Pantone: P-8-12 C Solid Coated
-                        .row
-                            h3.page-title.text-center.col-md-12
-                                | Pesquisar fontes
-                                small ...por uma questão de estilo
-                            figure.col-md-12.text-center
-                                img(src="{{ 'assets/images/portfolio/voligia/font_colonna.jpg'|theme }}", alt="")/
-                                figcaption
-                                    small Colonna MT
-                            figure.col-md-12.text-center
-                                img(src="{{ 'assets/images/portfolio/voligia/font_gill_sans.jpg'|theme }}", alt="")/
-                                figcaption
-                                    small Gill Sans MT
-
-        .section-row.three-quarters-padding-bottom.no-padding-top
+        .section-row.padding-top-100.three-quarters-padding-bottom
             .container
                 .row
                     .col-md-12
-                        p.col-md-offset-2.col-md-8.text-justify
-                            +content('voligia/secondotesto.htm')
+                        h4.page-title.text-center
+                            | Conceitos e Estudos
+                            small
+        +partial('voligia/processocriativo.htm')
 
-    //section#testimonials.section.th-dark(data-background="/themes/atemporale/assets/images/dev/parallax/1.jpg", data-background-xs="/themes/atemporale/assets/images/dev/parallax/1-xs.jpg", data-background-md="/themes/atemporale/assets/images/dev/parallax/1-md.jpg", data-background-lg="/themes/atemporale/assets/images/dev/parallax/1-lg.jpg")
-    .section-row-container.section.th-dark
-        .section-row.three-quarters-padding-top.three-quarters-padding-bottom(style="background-color:#bbb;")
+        .section-row.no-padding-top.three-quarters-padding-bottom
             .container
-                .row
-                    .col-md-10.col-md-push-1
-                        .testimonial-slider.owl-carousel(data-auto-height="true", data-single-item="true",data-animation-name="rotateInUpLeft")
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd.</cite>'
+                .row.padding-top-100
+                    .col-md-12
+                        h4.page-title.text-center.padding-bottom-50
+                            | Detalhes técnicos
+                            small construção da logo e especificações do projeto
 
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd.</cite>'
-
-                            .testimonial
-                                blockquote
-                                    p
-                                        !='Ever since we started working with Hydrogen, every project we had was always on time delivered.'
-                                    small
-                                        !='Alan Grant <cite>Invision, Ltd.</cite>'
+                        +partial('voligia/detalhe.htm')
 
 
+        .section-row.no-padding-top.three-quarters-padding-bottom
+            .container
+                .row.padding-top-100
+                    .col-md-12
+                        h4.page-title.text-center.padding-bottom-50
+                            | Aplicações da marca
+                            small
+
+        +partial('voligia/aplicazionedelmarchio.htm')
 
 +endsection()
