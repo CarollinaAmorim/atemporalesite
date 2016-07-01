@@ -1,7 +1,7 @@
 title = "account"
 url = "/account"
 layout = "default"
-description = "Pagina di accesso al profilo personale"
+description = "Pagina e acesso à área reservada para os clientes da  Atemporale Design"
 
 is_hidden = 0
 
@@ -55,8 +55,8 @@ paramCode = "code"
   <div class="section-row-container">
     <div class="section-row three-quarters-padding-bottom">
       <div class="container">{% if user %}
-        <h1 class="page-title text-center">Benvenuto {{ user.name }} {{ user.surname }}<small>Questa è l'area clienti riservata a {{ user.company }}.</small></h1>{% else %}
-        <h1 class="page-title text-center">Login<small>Utilizza le tue credenziali per accedere alla tua area riservata.</small></h1>{% endif %}
+        <h1 class="page-title text-center">Benvenuto {{ user.name }} {{ user.surname }}<small>Está é a área cliente reservada {{ user.company }}.</small></h1>{% else %}
+        <h1 class="page-title text-center">Login<small>Utiliza o seu login e senha para acessar a sua área cliente.</small></h1>{% endif %}
       </div>
     </div>
     <div class="section-row no-padding-top">

@@ -1,5 +1,5 @@
 include ./../layouts/mixin.jade
-+infopage('account','/account','default','Pagina di accesso al profilo personale')
++infopage('account','/account','default','Pagina e acesso à área reservada para os clientes da  Atemporale Design')
 !='is_hidden = 0'
 
 +infocomponent('account')
@@ -43,11 +43,11 @@ section.section
                 ='{% if user %}'
                 h1.page-title.text-center
                     | Benvenuto {{ user.name }} {{ user.surname }}
-                    small Questa è l'area clienti riservata a {{ user.company }}.
+                    small Está é a área cliente reservada {{ user.company }}.
                 ='{% else %}'
                 h1.page-title.text-center
                     | Login
-                    small Utilizza le tue credenziali per accedere alla tua area riservata.
+                    small Utiliza o seu login e senha para acessar a sua área cliente.
                 ='{% endif %}'
         .section-row.no-padding-top
             .container
