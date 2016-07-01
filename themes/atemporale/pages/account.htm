@@ -15,6 +15,9 @@ paramCode = "code"
 
 {% put styles %}
 
+<link href="/themes/atemporale/assets/fonts/novecento/stylesheet.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style.min.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style-inline.min.css" rel="stylesheet"/>
 <link href="/themes/atemporale/assets/css/account.min.css" rel="stylesheet"/>
 <link href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="/themes/atemporale/assets/vendor/chartist/dist/chartist.min.css" rel="stylesheet"/>
@@ -55,8 +58,8 @@ paramCode = "code"
   <div class="section-row-container">
     <div class="section-row three-quarters-padding-bottom">
       <div class="container">{% if user %}
-        <h1 class="page-title text-center">Benvenuto {{ user.name }} {{ user.surname }}<small>Está é a área cliente reservada {{ user.company }}.</small></h1>{% else %}
-        <h1 class="page-title text-center">Login<small>Utiliza o seu login e senha para acessar a sua área cliente.</small></h1>{% endif %}
+        <h1 class="page-title text-center">Bem-vindo {{ user.name }} {{ user.surname }}<small>Está é a área reservada da {{ user.company }}.</small></h1>{% else %}
+        <h1 class="page-title text-center">Login<small>Utiliza os seus dados para acessar.</small></h1>{% endif %}
       </div>
     </div>
     <div class="section-row no-padding-top">

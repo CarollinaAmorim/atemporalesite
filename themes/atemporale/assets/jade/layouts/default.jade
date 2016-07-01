@@ -3,8 +3,14 @@ include ./mixin.jade
 +infofile('default')
 +infocomponent('session')
 +optionsessioncomponent('all','')
+
++infocomponent('mailSignup')
++optiongenericcomponent('list','e23460ba42')
+
 +endinfofile()
+
 +component('session')
+
 
 doctype html
 html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/CreativeWork", xmlns:og="http://opengraphprotocol.org/schema/", xmlns:fb="http://www.facebook.com/2008/fbml", xmlns:website="http://ogp.me/ns/website", prefix="fb: http://ogp.me/ns/ profile: http://ogp.me/ns/profile#")
@@ -26,7 +32,7 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
 
         //Meta name og
         meta(property="og:title", content="Atemporale Design - Estratégias Criativas de Comunicação e Design")/
-        meta(property="og:description", content="Um buon Design é aquele que faz sen-ti-do e gera oportunidades. Todavia, um  Design affascinante é aquele que, além disso, permanece no tempo sendo ATEMPORAL")/
+        meta(property="og:description", content="Um buon Design é aquele que faz sen-ti-do e gera oportunidades. Todavia, um “Design affascinante” é aquele que, além disso, permanece no tempo sendo ATEMPORAL")/
         meta(property="og:type", content="website")/
         meta(property="og:url", content="http://atemporale.it")/
         meta(property="og:image", content="#")/
@@ -89,6 +95,7 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
 
+        .site-loader
         +yield('eventuals')
 
         header.site-header
@@ -97,57 +104,31 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
                     .row
                         .header-table.col-md-12
                             .header-col.brand
-                                a(href="#")
+                                a(href="{{ 'home'|page }}/#")
                                     +content('layout/navlogo.htm')
                             .header-col.main-nav
                                 a.nav-toggle(href="#")
                                 ul.nav
                                     li
-                                        a(href!="/#")
+                                        a(href!="{{ 'home'|page }}/#")
                                             !='Home'
                                     li
-                                        a(href!="/#about")
+                                        a(href!="{{ 'home'|page }}/#about")
                                             !='Sobre nós'
                                     li
-                                        a(href!="/#services")
+                                        a(href!="{{ 'home'|page }}/#services")
                                             !='O que fazemos?'
                                     li
-                                        a(href!="/#work")
+                                        a(href!="{{ 'home'|page }}/#work")
                                             !='Nossos projetos'
                                     li
-                                        a(href!="/#contact")
+                                        a(href!="{{ 'home'|page }}/#contact")
                                             !='Contato'
                                     li
-                                        a(href!="/blog")
+                                        a(href!="{{ 'blog'|page }}")
                                             ='Blog'
-                                            span.sub-toggle
-                                        ul
-                                            li
-                                                a(href!="/blog")
-                                                    ='Mais novos'
-                                            li
-                                                a(href!="/blog/identidade")
-                                                    ='Identidade visual'
-                                            li
-                                                a(href!="/blog/webdesign")
-                                                    ='Webdesign'
-                                            li
-                                                a(href!="/blog/marketing")
-                                                    ='Marketing digital'
-                                            li
-                                                a(href!="/blog/ecodesign")
-                                                    ='Ecodesign'
-                                            li
-                                                a(href!="/blog/sociais")
-                                                    ='Projetos sociais'
-                                            li
-                                                a(href!="/blog/interdisciplinares")
-                                                    ='Interdisciplinares'
-                                            li
-                                                a(href!="/blog/uncategorized")
-                                                    ='Outros'
                                     li
-                                        a(href="/account")
+                                        a(href="{{ 'account'|page }}")
                                             !='Area cliente'
 
                                     !='{% if user %}'
@@ -162,6 +143,7 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
         .site-wrapper
             .site-body
                 +yield('pages')
+                +component('googleTracker')
 
 
 
@@ -172,14 +154,15 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
                 .footer-widgets
                     .container
                         .row
-                            .col-md-4
+                            .col-md-5
                                 +content('layout/footerdesc.htm')
 
-                            .col-md-4
-                                +content('layout/footerservice.htm')
-
-                            .col-md-4
-                                +content('layout/footerproject.htm')
+                            .col-md-7
+                                h5.widget-title.text-center
+                                    !='Faça parte da nossa lista exclusiva'
+                                .col-md-12.text-center.padding-bottom-20
+                                    | Você receberá nossas melhores atualizações para você ficar sempre<br />por dentro do que acontece por aqui e no mundo do design.
+                                +component('mailSignup')
 
                 // fine nascosto
 
@@ -190,23 +173,24 @@ html(class="no-js", lang="pt-br", itemscope itemtype="http://schema.org/Creative
                                 .footer-text
                                     +content('layout/footercc.htm')
 
+
                                 .social-list
                                     ul
                                         li
                                             a(href="https://www.facebook.com/AtemporaleDesign/")
-                                                i.fa.fa-facebook
+                                                span.fa.fa-facebook
                                         li
                                             a( href="https://twitter.com/Atemporale_D")
-                                                i.fa.fa-twitter
+                                                span.fa.fa-twitter
                                         li
                                             a( href="https://www.instagram.com/atemporaledesign/")
-                                                i.fa.fa-instagram
+                                                span.fa.fa-instagram
                                         li
                                             a( href="https://plus.google.com/+AtemporaleD/posts?hl=en")
-                                                i.fa.fa-google-plus
+                                                span.fa.fa-google-plus
                                         li
                                             a( href="https://github.com/AtemporaleNEXT")
-                                                i.fa.fa-github
+                                                span.fa.fa-github
 
 
         +yield('scripts')

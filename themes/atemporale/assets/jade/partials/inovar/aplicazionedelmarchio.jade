@@ -1,1 +1,40 @@
 include ./../../layouts/mixin.jade
+
+- var img_1 = 'themes/atemporale/assets/images/portfolio/inovar/sfondo_applicazione.jpg'
+- var alt_1 = 'applicazione 1'
+- var figcaption_1 = 'render - logo, slogan e símbolo'
+
+- var img_2 = 'themes/atemporale/assets/images/portfolio/inovar/atemporale_design_inovar_moveis7.jpg'
+- var alt_2 = 'applicazione 2'
+- var figcaption_2 = 'Logo, slogan e textura'
+
+- var img_3  = 'themes/atemporale/assets/images/portfolio/inovar/atemporale_design_inovar_moveis9.jpg'
+- var alt_3 = 'applicazione 3'
+- var figcaption_3 = 'Papelaria'
+
+- var img_4  = 'themes/atemporale/assets/images/portfolio/inovar/atemporale_design_inovar_moveis6.jpg'
+- var alt_4 = 'applicazione 4'
+- var figcaption_4 = 'Aplicações diversas'
+
+.section-row.half-padding-top.half-padding-bottom.project-media.shadow-bg
+    .media-container
+        .nearby-slider
+            .royalSlider.rsHydrogen
+                .media
+                    figure
+                        img.rsImg(src="#{img_1}", alt="#{alt_1}")/
+                        figcaption.label.label-default #{figcaption_1}
+                .media
+                    figure
+                        img.rsImg(src="#{img_2}", alt="#{alt_2}")/
+                        figcaption.label.label-default #{figcaption_2}
+                .media
+                    figure
+                        img.rsImg(src="#{img_3}", alt="#{alt_3}")/
+                        figcaption.label.label-default #{figcaption_3}
+                .media
+                    figure
+                        img.rsImg(src="#{img_4}", alt="#{alt_4}")/
+                        figcaption.label.label-default #{figcaption_4}
+h3.page-title.text-center.col-md-8.col-md-offset-2.padding-top-50.padding-bottom-100
+    small A nova Identidade visual da Inovar Móveis visa firmar o posicionamento da empresa como uma marcenaria inovadora, que estimula e respeita a criativadade dos arquitetos e designers e leva um inusual valor para seus clientes.  

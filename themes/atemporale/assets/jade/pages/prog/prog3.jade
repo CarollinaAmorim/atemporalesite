@@ -3,6 +3,9 @@ include ./../../layouts/mixin.jade
 +endinfofile()
 
 +section('styles')
+link(href="/themes/atemporale/assets/fonts/novecento/stylesheet.css", rel="stylesheet")/
+link(href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style.min.css", rel="stylesheet")/
+link(href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style-inline.min.css", rel="stylesheet")/
 link(href="/themes/atemporale/assets/css/prog.min.css", rel="stylesheet")/
 link(href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")/
 +endsection()
@@ -86,15 +89,6 @@ script.
             tooltip: {
                 shared: true
             },
-            legend: {
-                layout: 'vertical',
-                align: 'left',
-                x: 110,
-                verticalAlign: 'bottom',
-                y: -95,
-                floating: true,
-                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-            },
             series: [ {
                 name: 'Investimento (os valores são ficticios por questão de privacidade mas proporcionais aos resultados.)',
                 type: 'column',
@@ -123,7 +117,7 @@ script.
 +endsection()
 
 +section('pages')
-section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg", data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg", data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg", data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg")
+section.section
     .section-row-container
         .section-row.three-quarters-padding-bottom
             .container
@@ -133,51 +127,38 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                             | Clinica Dentale Bavaria
                             small Projeto de Presença Virtual Insuperável e de Promoção Vencedora
 
-        .section-row.three-quarters-padding-bottom.three-quarters-padding-top
-            .container
-                .row
-                    img#logo_cliente_inovar.col-md-offset-3.col-md-6(src!="{{'assets/images/portfolio/bavaria/logo_bavaria.png'|theme }}", alt="")/
-
-        .section-row.three-quarters-padding-bottom.three-quarters-padding-top
-            .container
-                .row
-                    .col-md-12
-                        p.col-md-offset-2.col-md-8.text-justify
-                            +content('bavaria/primotesto.htm')
-
-        .section-row.no-padding-top.no-padding-bottom
+        .section-row.three-quarters-padding-top.no-padding-bottom
             .container
                 .row
                     .col-md-12(style="border-top:1px #ddd solid;")
 
-        .section-row
+        .section-row.padding-top-50.padding-bottom-50
             .container
                 .row
-                    .col-md-12
-                        h3.text-center
+                    .col-md-12(style="margin-bottom:10px")
+                        h3.text-center(style="line-height:0.5em;")
                             small
                                 | com a colaboração de:
                         a(href="http://diecicento.it/", title="Logo Diecicento Comunicazione", target="_blank")
                             img.col-md-offset-5.col-md-2(src!="{{'assets/images/portfolio/bavaria/logo_diecicento.jpg'|theme }}", alt="Logo Diecicento Comunicazione")/
 
 
-        .section-row.no-padding-top
+        .section-row.no-padding-top.no-padding-bottom
             .container
                 .row
                     .col-md-12(style="border-top:1px #ddd solid;")
 
-        .section-row.no-padding-top.three-quarters-padding-bottom
-            .container
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom
+            .container.padding-top-100
                 .row
                     .col-md-12
                         h2.page-title.text-center
                             | Presença Virtual Insuperável
                             small Construção do site corporativo e criação de perfis sociais oficial
 
-                .row
-                    .col-md-12
-                        img.text-center(src!="{{'assets/images/portfolio/bavaria/presentazione_pagine_sito.jpg'|theme }}", alt="")/
-                .row.padding-bottom-100
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom(data-background="{{'assets/images/portfolio/bavaria/schermo_bavaria.jpg'|theme }}")
+            .container
+                .row.padding-top-100.padding-bottom-100
                     .col-md-12.text-center
                         a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/HTML5", rel="tooltip", title="HTML5", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
                             img(src="{{'assets/images/portfolio/bavaria/logo_html5.png'|theme }}", alt="logo html5")/
@@ -188,19 +169,33 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                         a.marchi_programmazione(href="https://pt.wikipedia.org/wiki/PHP", rel="tooltip", title="PHP", data-html="1", data-trigger="hover focus", data-placement="bottom", target="_blank")
                             img(src="{{'assets/images/portfolio/bavaria/logo_php.png'|theme }}", alt="")/
 
+        .section-row.three-quarters-padding-top.three-quarters-padding-bottom
+            .container
                 .row
-                    .col-md-offset-2.col-md-5
-                        p.text-justify
-                            | ljllklkl
+                    .col-md-offset-1.col-md-6
+                        h4 Introdução
+                        p.text-justify.padding-top-10
+                            +content('bavaria/introduzione.htm')
+                        h5.padding-top-10 Avaliação de performance
+                        p.text-justify.padding-top-10
+                            +content('bavaria/performance.htm')
+                        h5.padding-top-10 Criando a rede
+                        p.text-justify.padding-top-10
+                            +content('bavaria/social.htm')
+
 
                     aside.col-md-offset-1.col-md-3
                         .sidebar-block
-                            h4.sidebar-title Social Network
+                            h4.sidebar-title Características técnicas
+                            p.col-md-12.padding-bottom-10
+                                +content('bavaria/caratteristiche.htm')
+                        .sidebar-block
+                            h4.sidebar-title Social Networks
                             ul
-                                li.arrow voce1
-                                li.arrow voce2
-                                li.arrow voce3
-                                li.arrow voce4
+                                li.arrow Página da empresa Facebook
+                                li.arrow Perfil de Twitter
+                                li.arrow Página da empresa LinkedIn
+                                li.arrow Página da empresa Google+
 
         .section-row.no-padding-top.no-padding-bottom
             .container
@@ -228,7 +223,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Semantica
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Connotazione letterale alle logiche di programmazione capace di assegnare valori differenti tra i contenuti del sito.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -236,7 +231,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Sitemap
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Definizione dell'architettura dell'informazione e invio ai principali motori di ricerca.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -244,7 +239,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Redazione
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Scrittura dei contenuti testuali visibili nel sito e alternativi agli elementi multimediali (foto, link, ecc).
                         .row
                             .col-md-4
                                 .icon-box.vertical
@@ -253,7 +248,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Performance
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Ottimizzazione e compressione dei file per ridurre i tempi di caricamento delle singole pagine.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -261,7 +256,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Motori di ricerca
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Invio di link, descrizione del sito e pacchetti di dati aggiuntivi per favorire il corretto posizionamento.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -269,7 +264,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Certificazioni
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Garanzie di sicurezza sulla proprietà, sulla sicurezza e sulla accessibilità dei contenuti.
 
                     .col-md-12.padding-top-100.padding-bottom-50
                         h4.section-subtitle.text-center
@@ -284,7 +279,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Monitoraggio
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Costante osservazione dei risultati ottenuti attraverso la lettura dei dati registrati da Google Analytics.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -292,7 +287,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Obiettivi
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Definizione di obiettivi e impostazioni di registrazione automatizzata del comportamento degli utenti.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -300,7 +295,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Budget
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Analisi degli indici di spesa dei vari compentitors e definizione del budget destinato alle campagne online.
                         .row
                             .col-md-4
                                 .icon-box.vertical
@@ -309,7 +304,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Strategia
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Scelta dei mezzi di comunicazione più efficaci e definizione dei vari piani di azione sugli stessi.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -317,7 +312,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Campagne
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Realizzazione delle campagne pubblicitarie online e ottimizzazione delle impostazioni di monitoraggio dei risulati.
                             .col-md-4
                                 .icon-box.vertical
                                     .icon
@@ -325,7 +320,7 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                                     .info
                                         h4 Risultati
                                         p
-                                            | Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque, consectetur adipisicing elit.
+                                            | Analisi delle mettriche, aggiornamenti sul costo per ogni singolo contatto e ridefinizione degli obiettivi.
                         .row
                             .col-md-12
                                 #container.padding-top-100(style="width:100%; height:40em;")
@@ -333,7 +328,8 @@ section.section(data-background="/themes/atemporale/assets/images/parallax/1.jpg
                         .row
                             .col-md-offset-2.col-md-8
                                 p.text-justify.padding-top-100.padding-bottom-100
-                                    | "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!" "Not forged!" and snatching Perth's levelled iron from the crotch, Ahab held it out, exclaiming—"Look ye, Nantucketer; here in this hand I hold his death! Tempered in blood, and tempered by lightning are these barbs; and I swear to temper them triply in that hot place behind the fin, where the White Whale most feels his accursed life!"
+                                    +content('bavaria/terzotesto.htm')
+
 
 
 

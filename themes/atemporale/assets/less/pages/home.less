@@ -4,12 +4,6 @@
 @import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_css3.less";
 @import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_posizione.less";
 @import (reference) "../../vendor/atemporaleNEXTbower/less/mixin_testo.less";
-
-//stampo le formattazioni generali di default
-//
-// * * * * * *
-@import (reference) "../../vendor/atemporaleNEXTbower/less/start.less";
-
 // stampo le formattazioni dei componenti
 //
 // * * * * * * font e icone
@@ -17,57 +11,29 @@
 @import "../../vendor/font-awesome/less/font-awesome.less";
 
 // * * * * * * twitter template
-@import "../../vendor/bootstrap/dist/css/bootstrap.min.css";
+@import "../../vendor/bootstrap/less/variables.less";
 
 // * * * * * * hydrogen plugin
 @import "../../vendor/royalslider/royalslider.less";
 @import "../../vendor/owlcarousel/owl-carousel/owl.carousel.less";
 @import "../../vendor/mfp/jquery.mfp.less";
-// * * * * * * hydrogen template
-@import "../components/theme_light.less";
-@import "../components/variables.less";
-@import "../components/mixins.less";
-@import "../components/typography.less";
-@import "../components/layout.less";
-@import "../components/section.less";
-@import "../components/modules.less";
-@import "../components/project.less";
-@import "../components/blog.less";
-@import "../components/mejs.less";
-@import "../components/media-queries.less";
-@import "../components/animations.less";
 
-// stampo le formattazioni dei nuovi elementi della pagina
-//
-// * * * * * * generale
-.padding-top-10{padding-top: 10px}
-.padding-top-20{padding-top: 20px}
-.padding-top-50{padding-top: 50px}
-.padding-top-100{padding-top: 100px}
+@import "../components/general.less";
 
-.padding-bottom-10{padding-bottom: 10px}
-.padding-bottom-20{padding-bottom: 20px}
-.padding-bottom-50{padding-bottom: 50px}
-.padding-bottom-100{padding-bottom: 100px}
-
-.vcenter {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
+h1.splash-headline{font-size: 6em !important;}
+h1{
+  font-size: 5em !important;
+  line-height: 1em !important;
+}
+h2{
+  font-size: 3em !important;
 }
 
-.testimonial-slider{
-  .testimonial{
-    blockquote{
-      color:#fff !important;
-      cite{
-        color:@brand-primary;
-      }
-    }
-  }
+.pricing-table{
+  .drop-shadow(0, 0, 5px, 0.3);
+  background-color: rgba(250,250,250,1);
 }
-.project-categories{
-  span{
-    background-color: @brand-primary !important;
-  }
+.pricing-table.featured{
+  .drop-shadow(0, 0, 30px, 0.3);
+  background-color: rgba(255,255,255,1);
 }

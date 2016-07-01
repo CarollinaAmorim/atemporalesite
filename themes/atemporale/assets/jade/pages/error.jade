@@ -3,6 +3,9 @@ include ./../layouts/mixin.jade
 +endinfofile()
 
 +section('styles')
+link(href="/themes/atemporale/assets/fonts/novecento/stylesheet.css", rel="stylesheet")/
+link(href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style.min.css", rel="stylesheet")/
+link(href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style-inline.min.css", rel="stylesheet")/
 link(href="/themes/atemporale/assets/css/home.min.css", rel="stylesheet")/
 link(href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")/
 +endsection()
@@ -33,7 +36,6 @@ section.section
         .section-row.three-quarters-padding-top.three-quarters-padding-bottom
             .container
                 h1.page-title.text-center
-                    !='Error <small> Desculpe algo saiu errado! Volte a página principal</small>'
+                    | Error <small> Desculpe algo saiu errado! Volte a página principal</small>
                     a(href="http://atemporale.it/") da Atemporale Design
-
 +endsection()

@@ -1,4 +1,4 @@
-title = "Prog1"
+title = "Inovar Móveis"
 url = "/prog1"
 layout = "default"
 description = "Progetto 1"
@@ -9,6 +9,9 @@ description = "Progetto 1"
 
 {% put styles %}
 
+<link href="/themes/atemporale/assets/fonts/novecento/stylesheet.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style.min.css" rel="stylesheet"/>
+<link href="/themes/atemporale/assets/vendor/hydrogen/css/wp-style-inline.min.css" rel="stylesheet"/>
 <link href="/themes/atemporale/assets/css/prog.min.css" rel="stylesheet"/>
 <link href="/themes/atemporale/assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
 {% endput %}
@@ -18,18 +21,13 @@ description = "Progetto 1"
 {% put scripts %}
 
 <script src="/themes/atemporale/assets/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
-<script src="/themes/atemporale/assets/js/prod/components/layout.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/js/prod/components/hydrogen.min.js" type="text/javascript"></script>
-<script src="/themes/atemporale/assets/js/prod/pages/home.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/html5shiv/dist/html5shiv.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/royalslider/jquery.royalslider.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/mfp/jquery.mfp-0.9.9.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/mediaelement/build/mediaelement-and-player.min.js" type="text/javascript"></script>
-<script src="/themes/atemporale/assets/vendor/gmap3/dist/gmap3.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/owlcarousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 <script src="/themes/atemporale/assets/vendor/isotope/dist/isotope.pkgd.min.js" type="text/javascript"></script>
-<script src="/themes/atemporale/assets/vendor/jquery-form/jquery.form.js" type="text/javascript"></script>
-<script src="/themes/atemporale/assets/vendor/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 {% endput %}
 
 
@@ -43,50 +41,22 @@ description = "Progetto 1"
 
 {% put pages %}
 
-<section data-background="/themes/atemporale/assets/images/parallax/1.jpg" data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg" data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg" data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg" class="section">
+<section data-background="/themes/atemporale/assets/images/parallax/1.jpg" data-background-xs="/themes/atemporale/assets/images/parallax/1-xs.jpg" data-background-md="/themes/atemporale/assets/images/parallax/1-md.jpg" data-background-lg="/themes/atemporale/assets/images/parallax/1-lg.jpg" class="section project-details">
   <div class="section-row-container">
     <div class="section-row three-quarters-padding-bottom">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="page-title text-center">Inovar Móveis<small>Qual o seu o jeito de Inovar?</small></h1>
+            <h1 class="page-title text-center">Inovar Móveis<small>Uma identidade nova para Inovar</small></h1>
           </div>
         </div>
       </div>
     </div>
 {% partial "inovar/copertina.htm" %}
-{% partial "inovar/processocriativo.htm" %}
-    <div class="section-row no-padding-top">
+    <div class="section-row three-quarters-padding-bottom three-quarters-padding-top">
       <div class="container">
         <div class="row">
           <div style="border-top:1px #ddd solid;" class="col-md-12"></div>
-        </div>
-      </div>
-    </div>
-    <div class="section-row no-padding-top three-quarters-padding-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="page-title text-center">Marca Irresistível<small>Projeto da Identidade visual da Marcenaria </small></h2>
-          </div>
-        </div>
-        <div class="row padding-top-100">
-{% partial "inovar/detalhesinistra.htm" %}
-{% partial "inovar/detalhedestra.htm" %}
-        </div>
-      </div>
-    </div>
-    <div class="section-row three-quarters-padding-bottom no-padding-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="col-md-offset-2 col-md-8 text-justify">
-
-{% content "inovar/secondotesto.htm" %}
-
-
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -94,7 +64,53 @@ description = "Progetto 1"
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="page-title text-center">Presença Virtual Insuperável<small>work in progress... </small></h2><br/><br/><br/><br/>
+            <h2 class="page-title text-center">Marca Irresistível<small>Projeto da Identidade visual da Marcenaria (logo, slogan, papelaria, aplicações da marca)<br />Team responsável: Alessandro Traversi, Carollina Amorim e Francislene Silva </small></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row padding-top-100 three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="page-title text-center">Conceitos e Estudos <small> </small></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+{% partial "inovar/processocriativo.htm" %}
+    <div class="section-row no-padding-top three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row padding-top-100">
+          <div class="col-md-12">
+            <h4 class="page-title text-center padding-bottom-50">Detalhes técnicos<small>Desenhos e especificações do projeto</small></h4>
+{% partial "inovar/detalhe.htm" %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row no-padding-top three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row padding-top-100">
+          <div class="col-md-12">
+            <h4 class="page-title text-center padding-bottom-50">Aplicações da marca <small>Cartão de visitas, envelopes, pastas, selos de garantias, uniformes, crachás e etc. </small></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+{% partial "inovar/aplicazionedelmarchio.htm" %}
+    <div class="section-row three-quarters-padding-bottom three-quarters-padding-top">
+      <div class="container">
+        <div class="row">
+          <div style="border-top:1px #ddd solid;" class="col-md-12"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row three-quarters-padding-top three-quarters-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-title text-center">Presença Virtual Insuperável<small>Em breve<br />Team: Alessandro Traversi e Carollina Amorim</small></h2><br/><br/><br/><br/>
           </div>
         </div>
         <div class="row"></div>

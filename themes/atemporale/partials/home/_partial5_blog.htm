@@ -1,5 +1,5 @@
 
-<section data-background="{{ '/themes/atemporale/assets/images/home/2-a.jpg'|app}}" data-background-xs="{{ '/themes/atemporale/assets/images/home/2-xs.jpg'|app}}" data-background-md="{{ '/themes/atemporale/assets/images/home/2-md.jpg'|app}}" data-background-lg="{{ '/themes/atemporale/assets/images/home/2-lg.jpg'|app}}" class="section">
+<section id="blog" data-background="{{ '/themes/atemporale/assets/images/home/2-a.jpg'|app}}" data-background-xs="{{ '/themes/atemporale/assets/images/home/2-xs.jpg'|app}}" data-background-md="{{ '/themes/atemporale/assets/images/home/2-md.jpg'|app}}" data-background-lg="{{ '/themes/atemporale/assets/images/home/2-lg.jpg'|app}}" class="section">
   <div class="section-row-container">
     <div class="section-row th-dark no-padding-bottom bg-transparent">
       <div class="container">
@@ -20,54 +20,10 @@
         <div class="row">
           <div data-animation-name="fadeInRightBig" class="col-md-12">
             <div data-auto-height="true" class="owl-carousel items-carousel">
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
 
-{% content "home_blog/post1.htm" %}
+{% component "blogPosts" %}
 
 
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
-
-{% content "home_blog/post2.htm" %}
-
-
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
-
-{% content "home_blog/post3.htm" %}
-
-
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
-
-{% content "home_blog/post4.htm" %}
-
-
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
-
-{% content "home_blog/post5.htm" %}
-
-
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="recent-post post-standard">
-
-{% content "home_blog/post6.htm" %}
-
-
-                </div>
-              </div>
             </div>
           </div>
         </div>

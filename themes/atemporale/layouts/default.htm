@@ -7,6 +7,10 @@ security = "all"
 redirect = ""
 
 
+
+[mailSignup]
+list = e23460ba42
+
 ==
 
 
@@ -29,7 +33,7 @@ redirect = ""
     <meta name="application-name" content="Atemporale Design - Estratégias Criativas de Comunicação e Design">
     <!--Meta name og-->
     <meta property="og:title" content="Atemporale Design - Estratégias Criativas de Comunicação e Design">
-    <meta property="og:description" content="Um buon Design é aquele que faz sen-ti-do e gera oportunidades. Todavia, um  Design affascinante é aquele que, além disso, permanece no tempo sendo ATEMPORAL">
+    <meta property="og:description" content="Um buon Design é aquele que faz sen-ti-do e gera oportunidades. Todavia, um “Design affascinante” é aquele que, além disso, permanece no tempo sendo ATEMPORAL">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://atemporale.it">
     <meta property="og:image" content="#">
@@ -89,6 +93,7 @@ redirect = ""
         
       </script>
     </div>
+    <div class="site-loader"></div>
 
 {% placeholder eventuals %}
 
@@ -98,31 +103,20 @@ redirect = ""
         <div class="container">
           <div class="row">
             <div class="header-table col-md-12">
-              <div class="header-col brand"><a href="#">
+              <div class="header-col brand"><a href="{{ 'home'|page }}/#">
 
 {% content "layout/navlogo.htm" %}
 
 </a></div>
               <div class="header-col main-nav"><a href="#" class="nav-toggle"></a>
                 <ul class="nav">
-                  <li><a href="/#">Home</a></li>
-                  <li><a href="/#about">Sobre nós</a></li>
-                  <li><a href="/#services">O que fazemos?</a></li>
-                  <li><a href="/#work">Nossos projetos</a></li>
-                  <li><a href="/#contact">Contato</a></li>
-                  <li><a href="/blog">Blog<span class="sub-toggle"></span></a>
-                    <ul>
-                      <li><a href="/blog">Mais novos</a></li>
-                      <li><a href="/blog/identidade">Identidade visual</a></li>
-                      <li><a href="/blog/webdesign">Webdesign</a></li>
-                      <li><a href="/blog/marketing">Marketing digital</a></li>
-                      <li><a href="/blog/ecodesign">Ecodesign</a></li>
-                      <li><a href="/blog/sociais">Projetos sociais</a></li>
-                      <li><a href="/blog/interdisciplinares">Interdisciplinares</a></li>
-                      <li><a href="/blog/uncategorized">Outros</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/account">Area cliente</a></li>{% if user %}
+                  <li><a href="{{ 'home'|page }}/#">Home</a></li>
+                  <li><a href="{{ 'home'|page }}/#about">Sobre nós</a></li>
+                  <li><a href="{{ 'home'|page }}/#services">O que fazemos?</a></li>
+                  <li><a href="{{ 'home'|page }}/#work">Nossos projetos</a></li>
+                  <li><a href="{{ 'home'|page }}/#contact">Contato</a></li>
+                  <li><a href="{{ 'blog'|page }}">Blog</a></li>
+                  <li><a href="{{ 'account'|page }}">Area cliente</a></li>{% if user %}
                   <li><a href="#" data-request="onLogout">Logout</a></li>{% endif %}
                 </ul>
               </div>
@@ -137,27 +131,28 @@ redirect = ""
 {% placeholder pages %}
 
 
+
+{% component "googleTracker" %}
+
+
       </div>
       <footer class="site-footer">
         <!-- inizio nascosto-->
         <div class="footer-widgets">
           <div class="container">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-5">
 
 {% content "layout/footerdesc.htm" %}
 
 
               </div>
-              <div class="col-md-4">
+              <div class="col-md-7">
+                <h5 class="widget-title text-center">Faça parte da nossa lista exclusiva
+                </h5>
+                <div class="col-md-12 text-center padding-bottom-20">Você receberá nossas melhores atualizações para você ficar sempre<br />por dentro do que acontece por aqui e no mundo do design.</div>
 
-{% content "layout/footerservice.htm" %}
-
-
-              </div>
-              <div class="col-md-4">
-
-{% content "layout/footerproject.htm" %}
+{% component "mailSignup" %}
 
 
               </div>
@@ -177,11 +172,11 @@ redirect = ""
                 </div>
                 <div class="social-list">
                   <ul>
-                    <li><a href="https://www.facebook.com/AtemporaleDesign/"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://twitter.com/Atemporale_D"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/atemporaledesign/"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://plus.google.com/+AtemporaleD/posts?hl=en"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="https://github.com/AtemporaleNEXT"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.facebook.com/AtemporaleDesign/"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="https://twitter.com/Atemporale_D"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="https://www.instagram.com/atemporaledesign/"><span class="fa fa-instagram"></span></a></li>
+                    <li><a href="https://plus.google.com/+AtemporaleD/posts?hl=en"><span class="fa fa-google-plus"></span></a></li>
+                    <li><a href="https://github.com/AtemporaleNEXT"><span class="fa fa-github"></span></a></li>
                   </ul>
                 </div>
               </div>
